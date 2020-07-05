@@ -6,12 +6,13 @@
     <link type="text/css" rel="stylesheet" href="../static/css/style.css">
     <title>Login - Predict Insurance Bill</title>
 </head>
+
 <body>
 <form action="" method="post">
     <div class="formcontainer">
         <p align="center" style="color:red;">{% for message in get_flashed_messages() %}
-    {{message}}
-    {% endfor %}</p>
+            {{message}}
+            {% endfor %}</p>
         <h1>Please login</h1>
         <p>Username
             <input type="text" placeholder="Username" name="username" value="{{
