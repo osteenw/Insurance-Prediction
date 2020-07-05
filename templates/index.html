@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Insurance Bill</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <!--    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+    <link type="text/css" rel="stylesheet" href="../static/css/style-basic.css">
+
+</head>
+
+<body>
+<form action="{{ url_for('predict')}}" method="POST">
+    <div class="formcontainer">
+        <p align="right"><a href ="/logout">logout</a></p>
+        <h1>Predict Insurance Bill</h1>
+
+        <p>Age:
+            <input type="number" name="age" placeholder="Age" required="required" min="0" max="140"/></p>
+        <p>Sex:
+            <select type="submit" name="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select></p>
+        <p>BMI:
+            <input type="number" name="bmi" placeholder="BMI" required="required" min="0" max="210"/></p>
+        <p>Children:
+            <input type="number" name="children" placeholder="Children" required="required" min="0" max="20" value="0"/></p>
+        <p>Smoker:
+            <select type="submit" name="smoker">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select></p>
+        <p>Region:
+            <select type="submit" name="region">
+                <option value="northeast">Northeast</option>
+                <option value="northwest">Northwest</option>
+                <option value="southeast">Southeast</option>
+                <option value="southwest">Southwest</option>
+            </select></p>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+<br><br>{{pred}}
+</div>
+
+</body>
+</html>
