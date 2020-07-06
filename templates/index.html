@@ -38,6 +38,14 @@
 
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
+                        <label class="label">Children</label>
+                    </div>
+                    <input class="input" type="number" name="children" placeholder="Children" required="required"
+                           min="0" max="20" value="0"/>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
                         <label class="label">Smoker</label>
                     </div>
                     <div class="select is-fullwidth">
@@ -63,8 +71,11 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                <button type="submit" class="button is-block is-info is-large is-fullwidth">Predict</button>
         </form>
-        <br><br>{{pred}}
     </div>
-    {% endblock %}
+    {% if url_for(request.endpoint) == url_for('predict') %}
+    <br>{{pred}}
+    {% endif %}
+</div>
+{% endblock %}
