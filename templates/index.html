@@ -1,47 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Predict Insurance Bill</title>
-    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+{% extends "base.html" %}
 
-</head>
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title has-text-grey-dark">Predict Insurance Bill</h3>
 
-<body>
-<form action="{{ url_for('predict')}}" method="POST">
-    <div class="formcontainer">
-        <p align="right"><a href="/logout">logout</a></p>
-        <h1>Predict Insurance Bill</h1>
+    <div class="box">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <div class="formcontainer">
 
-        <p>Age:
-            <input type="number" name="age" placeholder="Age" required="required" min="0" max="140"/></p>
-        <p>Sex:
-            <select type="submit" name="sex">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select></p>
-        <p>BMI:
-            <input type="number" name="bmi" placeholder="BMI" required="required" min="0" max="210"/></p>
-        <p>Children:
-            <input type="number" name="children" placeholder="Children" required="required" min="0" max="20" value="0"/>
-        </p>
-        <p>Smoker:
-            <select type="submit" name="smoker">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select></p>
-        <p>Region:
-            <select type="submit" name="region">
-                <option value="northeast">Northeast</option>
-                <option value="northwest">Northwest</option>
-                <option value="southeast">Southeast</option>
-                <option value="southwest">Southwest</option>
-            </select></p>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Age</label>
+                    </div>
+                    <input class="input" type="number" name="age" placeholder="Age" required="required"
+                           min="0" max="140"/>
+                </div>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-</form>
-<br><br>{{pred}}
-</div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Sex</label>
+                    </div>
+                    <div class="select is-fullwidth">
+                        <select type="submit" name="sex">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
 
-</body>
-</html>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">BMI</label>
+                    </div>
+                    <input class="input" type="number" name="bmi" placeholder="BMI" required="required" min="0"
+                           max="210"/>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Smoker</label>
+                    </div>
+                    <div class="select is-fullwidth">
+                        <select type="submit" name="smoker">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Region</label>
+                    </div>
+                    <div class="select is-fullwidth">
+                        <select type="submit" name="region">
+                            <option value="northeast">Northeast</option>
+                            <option value="northwest">Northwest</option>
+                            <option value="southeast">Southeast</option>
+                            <option value="southwest">Southwest</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <br><br>{{pred}}
+    </div>
+    {% endblock %}

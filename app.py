@@ -1,7 +1,6 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template, redirect, url_for, session, flash
+from flask import Flask, request, render_template, redirect, url_for, session, flash
 import pickle
-import pandas as pd
 from functools import wraps
 
 app = Flask(__name__)
@@ -49,7 +48,13 @@ def logout():
     flash('You were just logged out!')
     return redirect(url_for('login'))
 
-@app.route('/predict',methods=['POST', 'GET'])
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+            return redirect(url_for('welcome'))
+    return render_template('signup.html')
+
+@app.route('/predict',methods=['GET', 'POST'])
 def predict():
     if request.method=='POST':
         result = request.form
@@ -86,15 +91,8 @@ def predict():
         model = pickle.load(open('random_forst_model_1.pkl', 'rb'))
         prediction = model.predict(new_vector.reshape(1, -1))
 
-    return render_template('index.html',pred='Expected Bill will be ${:.2f}'.format(prediction[0]))
+    return render_template('index.html', pred='Expected Bill will be ${:.2f}'.format(prediction[0]))
 
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    data = request.get_json(force=True)
-    data_unseen = pd.DataFrame([data])
-    prediction = predict_model(model, data=data_unseen)
-    output = prediction.Label[0]
-    return jsonify(output)
 
 if __name__ == '__main__':
     app.run(debug=True)
