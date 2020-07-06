@@ -1,58 +1,20 @@
 import numpy as np
 from flask import Flask, request, render_template, redirect, url_for, session, flash
 import pickle
+import os
 from functools import wraps
 
 app = Flask(__name__)
 
-app.secret_key = "2FABF43CA4C11CA916817BB689461"
-
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('You need to login first.')
-            return redirect(url_for('login'))
-    return wrap
 
 @app.route('/')
 def home():
-    if 'logged_in' in session:
-        return redirect(url_for('welcome'))
-    else:
-        return redirect(url_for('login'))
+    return redirect(url_for('welcome'))
+
 
 @app.route('/index')
-@login_required
 def welcome():
     return render_template('index.html')
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'test' or request.form['password'] != 'test':
-            error = 'Invalid credentials. Please try again.'
-        else:
-            session['logged_in'] = True
-            # flash('You were just logged in!')
-            return redirect(url_for('welcome'))
-    return render_template('login.html', error=error)
-
-@app.route('/logout')
-@login_required
-def logout():
-    session.pop('logged_in', None)
-    flash('You were just logged out!')
-    return redirect(url_for('login'))
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    if request.method == 'POST':
-            return redirect(url_for('welcome'))
-    return render_template('signup.html')
 
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
@@ -95,4 +57,5 @@ def predict():
 
 
 if __name__ == '__main__':
+    app.secret_key = os.urandom(12)
     app.run(debug=True)

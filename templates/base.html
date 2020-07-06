@@ -61,50 +61,8 @@
                     Dashboard
                 </a>
             </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        {% if not session.logged_in %}
-                        <a class="button is-primary" href="{{ url_for('signup') }}">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light" href="{{ url_for('login') }}">
-                            Log in
-                        </a>
-                        {% else %}
-                        <a class="button is-light" href="{{ url_for('logout') }}" class="navbar-item">
-                            Logout
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
         </div>
     </nav>
-    <!--        <div class="hero-head">-->
-    <!--            <nav class="navbar">-->
-    <!--                <div class="container">-->
-
-    <!--                    <div id="navbarMenuHeroA" class="navbar-menu">-->
-    <!--                        <div class="navbar-end">-->
-    <!--                            <a href="{{ url_for('home') }}" class="navbar-item">-->
-    <!--                                Home-->
-    <!--                            </a>-->
-    <!--                            <a href="{{ url_for('login') }}" class="navbar-item">-->
-    <!--                                Login-->
-    <!--                            </a>-->
-    <!--                            <a href="{{ url_for('login') }}" class="navbar-item">-->
-    <!--                                Sign Up-->
-    <!--                            </a>-->
-    <!--                            <a href="{{ url_for('logout') }}" class="navbar-item">-->
-    <!--                                Logout-->
-    <!--                            </a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </nav>-->
-    <!--        </div>-->
 </section>
 
 <div class="hero-body">
