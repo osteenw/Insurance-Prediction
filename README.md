@@ -3,7 +3,6 @@ Machine learning applied to create a webapp to predict the potential medical cos
 
 Regression analysis was applied to the supplied dataset to create a prediction model for hospital charges based on the health metrics.
 
-Username: Test
-Password: Test
+https://insurance-prediction964.herokuapp.com/
 
 The web app and analytics dashboard is still a work in progress.
