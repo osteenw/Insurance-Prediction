@@ -1,5 +1,5 @@
 # Insurance-Prediction
-Machine learning insurace prediction webapp
+Machine learning applied to create a webapp for hospital charge prediction.
 
 Regression analysis was applied to the supplied dataset to create a prediction model for hospital charges based on the health metrics.
 
