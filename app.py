@@ -1,8 +1,7 @@
 import numpy as np
-from flask import Flask, request, render_template, redirect, url_for, session, flash
+from flask import Flask, request, render_template, redirect, url_for
 import pickle
 import os
-from functools import wraps
 
 app = Flask(__name__)
 
@@ -15,6 +14,10 @@ def home():
 @app.route('/index')
 def welcome():
     return render_template('index.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
