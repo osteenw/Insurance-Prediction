@@ -3,15 +3,15 @@
     <h3 class="title has-text-grey-dark">Dashboard</h3>
     {#    <div class="column is-4 is-offset-4">#}
     <p>We will explore the data to determine which factors correlate with an increased cost.</p>
-    <img src="{{ url_for('static', filename='assets/heatmap.png') }}">
+    <img alt="Heatmap" src="{{ url_for('static', filename='assets/heatmap.png') }}">
     <p>A heatmap of the data shows the strongest correlation between smoking and charges.</p>
     <p>There is also a lesser
         correlation between BMI and age to charges. We will plot these factors vs. the charges below.</p>
 
-    <img src="{{ url_for('static', filename='assets/hist_charges.png') }}">
-    <img src="{{ url_for('static', filename='assets/smoker_v_charges.png') }}">
-    <img src="{{ url_for('static', filename='assets/bmi_v_charges.png') }}">
-    <img src="{{ url_for('static', filename='assets/age_v_charges.png') }}">
+    <img alt="Histogram of charges" src="{{ url_for('static', filename='assets/hist_charges.png') }}">
+    <img alt="Smoker vs. Charges Plot" src="{{ url_for('static', filename='assets/smoker_v_charges.png') }}">
+    <img alt="BMI vs. Charges Plot" src="{{ url_for('static', filename='assets/bmi_v_charges.png') }}">
+    <img alt="Age vs. Charges Plot" src="{{ url_for('static', filename='assets/age_v_charges.png') }}">
 
     {#    </div>#}
 {% endblock %}
