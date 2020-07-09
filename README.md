@@ -1,7 +1,7 @@
 # Insurance-Prediction
 Machine learning  was applied to create a web application to predict the potential medical cost billed by health insurance.
 
-Regression analysis was applied to the supplied dataset to create a prediction model for hospital charges based on the health metrics.
+Regression analysis was applied to the supplied dataset to determine what metrics affect hospital charges.
 
 The web application can be found on Heroku at the following link:
 https://insurance-prediction964.herokuapp.com/
