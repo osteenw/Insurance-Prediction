@@ -8,7 +8,7 @@ https://insurance-prediction964.herokuapp.com/
 
 
 * Insurance-Prediction.ipynb - Contains a Jupyter notebook for the machine learning model creation, and linear regression analysis on the dataset.
-* insurance.csv - Is the dataset from found on Kaggle at https://www.kaggle.com/mirichoi0218/insurance
+* insurance.csv - Is the dataset found on Kaggle at https://www.kaggle.com/mirichoi0218/insurance
 * app.py - Contains the python application to start the web server.
 
 
