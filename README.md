@@ -12,4 +12,4 @@ https://insurance-prediction964.herokuapp.com/
 * app.py - Contains the python application to start the web server.
 
 
-To run the application locally download or clone this repository. Make sure your machine has a python environment set up with the packages found in requirements.txt. Then run the app.py. `python3 app.py`
+To run the application locally download or clone this repository. Make sure your machine has a python environment set up with the packages found in the requirements.txt. Then run the app.py. `python3 app.py`
