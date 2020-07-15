@@ -56,7 +56,7 @@ def predict():
         model = pickle.load(open('random_forst_model_1.pkl', 'rb'))
         prediction = model.predict(new_vector.reshape(1, -1))
 
-    return render_template('index.html', pred='Expected Bill will be ${:.2f}'.format(prediction[0]))
+    return render_template('index.html', pred='Expected bill will be ${:.2f}'.format(prediction[0]))
 
 
 if __name__ == '__main__':
